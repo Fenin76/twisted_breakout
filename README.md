@@ -17,7 +17,7 @@ The twist: **the score is not always just the number of blocks you break** — l
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/twisted_breakout.git
+git clone https://github.comnew/twisted_breakout.git
 cd twisted_breakout
 
 ```
