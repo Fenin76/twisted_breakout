@@ -29,16 +29,12 @@ class player():
           self.col_list = self.col_gen()
           
 
-          self.ball_vel_x = 10   # right movement (+5), or left (-5)
-          self.ball_vel_y = -10  # upward movement (-5), or downward (+5)
+          self.ball_vel_x = 10   
+          self.ball_vel_y = -10  
           self.bricks()
 
           self.score = 0
           
-          
-
-          
-
 
 
      def move_left(self):
@@ -72,8 +68,7 @@ class player():
                 self.brick_list.append(((j*self.len, i*self.wid, self.len, self.wid), random.uniform(0,100)))
           return self.brick_list
                   
-     #############################################################################################################         
-     # 
+    
      def ball_movement(self):
         if self.first_touch:  # only move after launched
             self.b_xloc += self.ball_vel_x
@@ -88,10 +83,9 @@ class player():
                 if self.b_yloc - self.rad <= 0:
                     self.ball_vel_y *= -1
                 else:
-                    for brick in self.brick_list[:]:  # iterate over copy so we can remove
-                        bx, by, bl, bw  = brick[0]  # brick is (x, y)
+                    for brick in self.brick_list[:]:  
+                        bx, by, bl, bw  = brick[0]  
 
-                        # Example simple collision check (adjust for your brick width/height)
                         if (self.b_xloc + self.rad >= bx and
                             self.b_xloc - self.rad <= bx + bl and
                             self.b_yloc + self.rad >= by and
@@ -107,7 +101,6 @@ class player():
             if (self.y_loc <= self.b_yloc + self.rad <= self.y_loc + self.width and
                 self.x_loc <= self.b_xloc <= self.x_loc + self.length):
                 self.ball_vel_y *= -1
-                # Optional: angle ball depending on where it hit the paddle
                 offset = (self.b_xloc - (self.x_loc + self.length/2)) / (self.length/2)
                 self.ball_vel_x += offset * 2
 
@@ -134,7 +127,6 @@ class player():
 
 
      def bg_update(self):
-        # fill the screen with a color to wipe away anything from last frame
         if((self.b_yloc > 720 + self.width) or len(self.brick_list)==0):
             self.game_over()
         else:
@@ -148,5 +140,5 @@ class player():
             
             pg.draw.circle(window, (255, 255, 255), (self.b_xloc, self.b_yloc), self.rad)
             pg.display.update()
-            # RENDER YOUR GAME HERE
+            # RENDER  GAME HERE
     
