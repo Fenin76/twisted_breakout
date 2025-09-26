@@ -35,3 +35,6 @@ pip3 install pygame
 python3 game.py
 ```
 
+![Gameplay Demo](assets/game_view.gif)
+
+
