@@ -26,7 +26,7 @@ cd twisted_breakout
  2. Requirements that are needed
  pygame
 ```
-pip install pygame
+pip3 install pygame
 ```
 
 
