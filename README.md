@@ -24,9 +24,9 @@ cd twisted_breakout
 
 
  2. Requirements that are needed
- can be found in requirements.txt
+ pygame
 ```
-pip install -r requirements.txt
+pip install pygame
 ```
 
 
